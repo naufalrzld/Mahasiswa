@@ -9,6 +9,9 @@ public class MahasiswaResponse {
     @SerializedName("error")
     @Expose
     private Boolean error;
+    @SerializedName("msg")
+    @Expose
+    private String message;
     @SerializedName("mahasiswa")
     @Expose
     private List<MahasiswaModel> mahasiswa = null;
@@ -19,6 +22,14 @@ public class MahasiswaResponse {
 
     public void setError(Boolean error) {
         this.error = error;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public List<MahasiswaModel> getMahasiswa() {

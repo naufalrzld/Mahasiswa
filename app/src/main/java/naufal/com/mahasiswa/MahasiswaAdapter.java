@@ -46,7 +46,18 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.View
         holder.cvItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, mahasiswaModel.getNim(), Toast.LENGTH_SHORT).show();
+                /*
+                * Perlu diketahui intent bisa mengirimkan data ke activity lain yang dituju
+                * Pada kasus ini intent yang dituju yaitu AddMahasiswaActivity
+                * Pada baris 55 - 59 merupakan cara untuk mengirimkan data dari suatu activity ke activity lainnya
+                * */
+                Intent i = new Intent(context, AddMahasiswaActivity.class);
+                i.putExtra("status", "edit");
+                i.putExtra("nim", mahasiswaModel.getNim());
+                i.putExtra("nama", mahasiswaModel.getNama());
+                i.putExtra("kelas", mahasiswaModel.getKelas());
+                i.putExtra("jurusan", mahasiswaModel.getJurusan());
+                context.startActivity(i);
             }
         });
     }

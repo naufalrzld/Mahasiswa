@@ -13,6 +13,15 @@ public interface MahasiswaAPIIntenrface {
     Call<MahasiswaResponse> tambahData(@Field("nim") String nim, @Field("nama") String nama,
                                        @Field("kelas") String kelas, @Field("jurusan") String jurusan);
 
+    @FormUrlEncoded
+    @POST("updateDataMahasiswa.php")
+    Call<MahasiswaResponse> updateData(@Field("nim") String nim, @Field("nama") String nama,
+                                       @Field("kelas") String kelas, @Field("jurusan") String jurusan);
+
+    @FormUrlEncoded
+    @POST("deleteDataMahasiswa.php")
+    Call<MahasiswaResponse> deleteData(@Field("nim") String nim);
+
     @GET("getDataMahasiswa.php")
     Call<MahasiswaResponse> getDataMahasiswa();
 }
