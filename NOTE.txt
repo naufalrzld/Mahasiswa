@@ -1,0 +1,36 @@
+1. Buat project seperti biasa
+2. Cari library retrofit di google (https://github.com/square/retrofit)
+3. Library ini berfungsi untuk menghubungkan android ke server
+4. Cari library retrofit-converters gson (https://github.com/square/retrofit/tree/master/retrofit-converters/gson)
+5. Library ini berfungsi untuk mengconvert bentuk response json dari server kedalam bentuk gson
+6. Cari library recyclerview untuk menampilkan list data mahasiswa (https://developer.android.com/topic/libraries/support-library/packages)
+7. Cari library cardview untuk membuat tampilan card pada setiap list data mahasiswa (https://developer.android.com/topic/libraries/support-library/packages)
+8. Cari library design (https://developer.android.com/topic/libraries/support-library/packages)
+9. Buka build.gradle(Module: app)
+10. Copy semua script library tersebut dan paste di gradle bagian dependencies
+11. Buat swiperefreshlayout dan didalamnya ada recyclerview pada activity_main.xml
+12. Buat floatingactionbutton diluar swiperefreshlayout pada activity_main.xml
+13. Buat layout baru dan beri nama card_items.xml, nantinya file ini digunakan untuk tampilan data mahasiswa dalam bentuk cardview
+14. Buat adapter dari recyclerview, nantinya adapter ini digunakan untuk menampilkan data mahasiswa yang di set ke tampilan card_items.xml
+15. Buat servicesnya, services yang digunakan yaitu menggunakan library retrofit
+16. Services ini ada 3 komponen/class yang harus dibuat yaitu APIClient, APIInterface dan RetrofitServices
+17. Class APIClient digunakan untuk mendefinisikan alamat server dengan menggunakan nama domain
+18. Jika bersifat local/menggunakan xampp, urlnya adalah http://localhost/nama_api/
+19. Jika bersifat glolbal/menggunakan jasa hosting, urlnya adalah nama domain yang kamu buat, misal http://domainku.com/nama_api/
+20. Class APIInterface digunakan untuk mendefinisikan alamat url API (Application Programming Interface)
+21. Class RetrofitServices digunakan untuk menghubungkan antara class APIClient dengan APIInterface. Class ini nantinya akan digunakan untuk proses request terhadap server
+22. Coding bagian MainActivity, panggil adapter tersebut di MainActivity karena recyclerviewnya ada di bagian MainActivity dan datanya akan di tampilkan di activity ini
+23. Buat activity baru dengan tipe empty activity, misal kita namakan AddMahasiswaActivity, activity baru ini digunakan untuk menambahkan data mahasiswa ke database
+24. Coding bagian xml nya terlebih dahulu, setelah selesai baru coding bagian class javanya
+25. Class AddMahasiswaActivity ini selain digunakan untuk menambahkan data ke database, bisa juga digunakan untuk mengedit data yang sudah ada di database
+26. Alasan activity untuk tambah data dan edit data disatukan yaitu agar tidak terlalu banyak class, karena pada intinya tambah dan edit data itu tampilan layoutnya sama, hanya berbeda proses saja
+27. Untuk membedakan prosesnya, floatingactionbutton ditekan maka jalankan activity AddMahasiswaActivity dengan membawa data yang beriskikan keterangan "add"
+28. Ketika kita mengklik salah satu list data mahasiswa maka jalankan activity AddMahasiswaActivity dengan membawa data yang beriskikan keterangan "edit"
+29. Untuk prakteknya silahkan baca komentar yang ada pada codingan
+30. Buat folder baru bernama menu di dalam res, caranya klik kanan pada folder res -> new -> directory, berinama menu
+31. Buat menu resource file, caranya klik kanan pada folder menu yang baru dibuat -> new -> menu resource file
+32. Menu resource file ini berfungsi untuk menampilkan menu di toolbar/pojok kanan atas layar
+33. Menu yang dimaksud disini adalah untuk menampilkan tombol delete untuk mendelete data
+32. Menu ini nantinya akan ditampilkan di activity AddMahasiswaActivity
+33. Namun ketika proses "add" menu tersebut tidak ada, sedangkan proses "edit" menu tersebut akan tampil
+34. Kurang lebih alur dari project ini seperti itu, kalau masih ada yang kurang jelas boleh ditanyakan
